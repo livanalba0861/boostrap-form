@@ -13,30 +13,51 @@
 </head>
 
 <body>
-    <div class="container"><!--this box contains the whole page-form-->
-        
-        <div  class="m-50 bg-secondary-subtle"><!--this is the header of the form-->
+    <form class="container border border-primary mt-4"><!--this box contains the whole page-form-->
+
+        <div class="row rounded bg-secondary-subtle p-2"><!--this is the header of the form-->
             <h1>Payment form example</h1>
         </div>
-        <div class="bg-danger"> <!--this is the red banner-->
-            <p>Some fields are missing</p>
+        <div class="row rounded mt-5 bg-danger-subtle m-auto"> <!--this is the red banner-->
+            <p class="m-0 py-2">Some fields are missing</p>
         </div>
         <!--this is the form-->
-        <div>
-            <form action="" class="container">
-                <label for="card#">Card #</label>
-                <input type="number" placeholder="XXXXXXXXXX" id="card#" class="form-control">
-                <label for="CVC#">CVC #</label>
-                <input type="number" placeholder="0000" id="CVC#" class="form-control">
-                <label for="amount">Amount</label>
-                <input type="number" placeholder="Amount" id="amount" class="form-control">
-                <label for="firstname">First Name</label>
-                <input type="text" id="firstname" class="form-control">
-                <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" class="form-control">
-                <label for="city">City</label>
-                <input type="text" id="city" class="form-control">
-                <label for="state">State</label>
+
+
+        <div class="row pt-4">
+            <div class="col-6">
+                <span>Credit Card</span>
+                <input type="text" class="form-control" placeholder="xxxxxxxxxxxxxxxx" aria-label="Card number">
+            </div>
+            <div class="col-3">
+                <span>CVC #</span>
+                <input type="text" class="form-control" placeholder="xxxx" aria-label="CVC number">
+            </div>
+            <div class="col-3">
+                <span>Amount</span>
+                <input type="text" class="form-control" placeholder="Amount" aria-label="Amount">
+                </label>
+            </div>
+        </div>
+
+        <div class="row pt-4">
+            <div class="col-6">
+                <span>First Name</span>
+                <input type="text" class="form-control" placeholder="First Name" aria-label="First Name">
+            </div>
+            <div class="col-6">
+                <label for="lastname" class="form-label w-100">Last Name<input type="text" id="lastname"
+                        class="form-control"></label>
+            </div>
+        </div>
+
+        <div class="row pt-4">
+            <div class="col-6">
+                <span>City</span>
+                <input type="text" class="form-control" placeholder="City" aria-label="City">
+            </div>
+            <div class="col-3">
+                <span>State</span>
                 <!--working on picklist field-->
                 <select id="state" class="form-control">
                     <option value="Alabama">Alabama</option>
@@ -92,22 +113,64 @@
                     <option value="Wisconsin">Wisconsin</option>
                     <option value="Wyoming">Wyoming</option>
                 </select>
-                <label for="postalcode">Postal Code</label>
-                <input type="number" id="postalcode" class="form-control">
-                <!--credit card type-->
-                <label for="cardtype">We accept:</label>
-                <input type="checkbox" class="form-control">
-                <div>
-                    <i class="fa fa-cc-visa" style="color:navy;"></i>
-                    <i class="fa fa-cc-amex" style="color:blue;"></i>
-                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                    <i class="fa fa-cc-discover" style="color:orange;"></i>
-                </div>
-                <label for="message">Message</label>
-                <input type="text" id="message" class="form-control">
-            </form>
+            </div>
+            <div class="col-3">
+                <span>Postal Code</span>
+                <input type="text" class="form-control" placeholder="Postal Code" aria-label="Postal Code">
+            </div>
         </div>
-    </div>
+        <div class="row pt-4">
+            <div class="col-6">
+                <p>We accept:</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                        value="option1" checked>
+                    <label class="form-check-label btn-sm" for="exampleRadios1">
+                        <img src="matercardicon.png" width="70rem">
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                        value="option2" checked>
+                    <label class="form-check-label btn-sm" for="exampleRadios2">
+                        <img src="tdicon.png" width="40rem">
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                        value="option1" checked>
+                    <label class="form-check-label btn-sm" for="exampleRadios3">
+                        <img src="visaicon.png" width="60rem">
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
+                        value="option1" checked>
+                    <label class="form-check-label btn-sm" for="exampleRadios4">
+                        <img src="wellsfargoicon.png" width="50rem">
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
+                        value="option1" checked>
+                    <label class="form-check-label btn-sm" for="exampleRadios5">
+                        <img src="amazon.png" width="50rem">
+                    </label>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="message" class="w-100">
+                    Message
+                    <textarea type="text" id="message" class="form-control" rows="3"></textarea>
+                </label>
+            </div>
+
+        </div>
+        <div class="row pt-7 m-2 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary col-1 pt-1 m-2">Submit</button>
+            <button type="button" class="btn btn-danger col-1 pt-1 m-2">Cancel</button>
+        </div>
+    </form>
 </body>
 
 </html>
